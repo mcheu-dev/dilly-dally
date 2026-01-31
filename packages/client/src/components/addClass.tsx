@@ -22,17 +22,24 @@ import {
 import { Input } from "./input";
 import { Button } from "./button";
 import { Building2, UserRound, Clock } from "lucide-react";
+import { useState } from "react";
 
 
 export function AddClassDialog() {
+    const [open, setOpen] = useState(false);
+    function handleSubmit(event: React.FormEvent) {
+        event.preventDefault();
+        // Handle form submission logic here
+        setOpen(false);
+    }
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
             <Button>Add New Class</Button>
         </DialogTrigger>
         <DialogContent>
             <DialogHeader>
-                <DialogTitle>Add New Class</DialogTitle>
+                <DialogTitle>Log Class</DialogTitle>
                 <DialogDescription>
                 Fill out the details below to add a new class to your schedule.
                 </DialogDescription>
@@ -72,7 +79,7 @@ export function AddClassDialog() {
                 </Field>
             </FieldGroup>
             <DialogFooter>
-                <Button type="submit">Add Class</Button>
+                <Button type="submit" onClick={handleSubmit}>Add</Button>
             </DialogFooter>
         </DialogContent>
         </Dialog>
