@@ -4,11 +4,9 @@
 @custom-variant dark (&:is(.dark *));
 
 
-.my-booked-class {
-    background-color: rgb(156, 185, 210);
-    color: white;
-    border-radius: 50%;
-    opacity: 0.8;
+.my-booked-class:not([aria-selected="true"]) {
+    color: var(--color-rose-500);
+    text-decoration-line: underline;
   }
 
 :root {

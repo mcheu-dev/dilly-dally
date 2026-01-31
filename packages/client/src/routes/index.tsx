@@ -31,7 +31,7 @@ const events = [
   },
   {
     instructor: "Teacher C",
-    date: "2026-01-30",
+    date: "2026-01-31",
     studio: "ILD (Manhattan)",
     duration: "85",
     type: "Choreography",
@@ -40,7 +40,7 @@ const events = [
 ]
 
 function Index() {
-  const [date, setDate] = useState<Date | undefined>(undefined);
+  const [date, setDate] = useState<Date>(new Date());
   const dateTitle = date
   ? format(date, "yyyy-MM-dd")
     : null;
