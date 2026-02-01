@@ -3,6 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+
+.my-booked-class:not([aria-selected="true"]) {
+    color: var(--color-rose-500);
+    text-decoration-line: underline;
+  }
+
 :root {
     --background: oklch(1 0 0);
     --foreground: oklch(0.145 0 0);
